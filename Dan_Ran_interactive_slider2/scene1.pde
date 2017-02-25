@@ -13,4 +13,3 @@ class Scene1 {
     image(b1t, 0, 0,width,height);
   }
 }
-

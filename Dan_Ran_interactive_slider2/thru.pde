@@ -27,18 +27,19 @@ class Thru {
     pushStyle();
     //tint(255,fade);
 
-    image(backImg, 0, 0,width,height);
+    //image(backImg, 0, 0,width,height);
 
     image(surImg, 0, 0,width,height);
     popStyle();
     pushStyle();   
-    //imageMode(CENTER);
-    PImage curImg=backImg.get(mouseX, mouseY, 400, 300);
+    imageMode(CENTER);
+    PImage curImg=backImg.get(mouseX-200, mouseY-150, 400, 300);
+        
     image(curImg, mouseX, mouseY, 400, 300);
+
     image(cImg, mouseX, mouseY);
     popStyle();
     noCursor();
     //cursor(HAND);
   }
 }
-
