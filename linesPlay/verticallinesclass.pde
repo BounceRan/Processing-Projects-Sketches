@@ -2,7 +2,7 @@ class VerticalLine {
   float y1, x, y2, y3, varb, lineSpeed;
   int num=1;
   float line_Color=100;
-
+  //float alphaColor=255;
   boolean lineState=false;
 
 
@@ -12,12 +12,12 @@ class VerticalLine {
 
 
     strokeWeight(line_Weight);
-    stroke(line_Color);
+    stroke(line_Color); 
 
     y1=random(height);
     y3=random(height);
     x=random(width);
-    lineSpeed=random(0.2, .7);
+    lineSpeed=random(.5, .9);
     if ( y1<y3) {
       y2=y1;
       num=0;
@@ -33,7 +33,7 @@ class VerticalLine {
     y1=random(height);
     y3=random(height);
     x=random(width);
-    lineSpeed=random(0.2, .7);
+    lineSpeed=random(.5, .9);
     if ( y1<y3) {
       y2=y1;
       num=0;
@@ -44,7 +44,7 @@ class VerticalLine {
   }
 
   void drawLine() {
-
+pushStyle();
 
     switch(num) {
     case 0:
@@ -59,14 +59,13 @@ class VerticalLine {
           line_Color++;
           stroke(line_Color);
           if (line_Color>=255) {
-            
+
             updateInfo();
           }
         }
       }
 
       break;
-
     case 1:
       stroke(line_Color);
       line(x, y1, x, y2);
@@ -78,16 +77,16 @@ class VerticalLine {
           line_Color++;
           stroke(line_Color);
           if (line_Color>=255) {
-            
+
             updateInfo();
           }
         }
       }
 
       break;
-
-    case 2:
-      break;
     }
+      popStyle();
   }
+  
+
 }
