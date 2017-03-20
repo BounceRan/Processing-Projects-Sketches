@@ -1,0 +1,10 @@
+//Just put this somewhere outside of functions and write memoryMonitor() to print out the memory:
+
+void memoryMonitor() {
+  // Memory Monitor
+  Runtime rt = Runtime.getRuntime();
+  long usedMB = (rt.totalMemory() - rt.freeMemory()) / 1024 / 1024;
+  println("memory usage : " + usedMB + " mb");
+  println("framrate : " + frameRate + "fps");
+}
+ 
